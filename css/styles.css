@@ -81,10 +81,6 @@ img {
     color: var(--accent-color);
 }
 
-.list {
-    list-style: none;
-}
-
 .section {
     padding-top: 94px;
     padding-bottom: 94px;
@@ -100,19 +96,19 @@ img {
 
 /* Шапка сторінки*/
 
-.page-header {
+.header {
     background-color: var(--primary-white-color);
     border-bottom: 1px solid var(--header-border-color);
 }
 
 /* Навігація */
 
-.main-nav {
+.header__container {
     display: flex;
     align-items: center;
 }
 
-.site-nav {
+.header__nav {
     display: flex;
     align-items: center;
 }
@@ -120,8 +116,6 @@ img {
 /* Лого хедер */
 .logo {
     display: block;
-    padding-top: 24px;
-    padding-bottom: 25px;
 
     font-family: 'Raleway', sans-serif;
     font-weight: 700;
@@ -129,31 +123,39 @@ img {
     line-height: 1.19;
 
     color: var(--accent-color);
+
 }
 
-.logo-half-header {
+.header__logo {
+    padding-top: 24px;
+    padding-bottom: 25px;
+}
+
+
+.header__half-logo {
     color: var(--logo-black-color);
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.logo:hover .logo-half-header,
-.logo:focus .logo-half-header {
+.logo:hover .header__half-logo,
+.logo:focus .header__half-logo {
     color: var(--accent-color);
 }
 
 /* Посилання на сторінки */
 
-.nav-list {
+.site-nav {
     display: flex;
     margin-left: 93px;
+    list-style: none;
 }
 
-.nav-item + .nav-item {
-    margin-left: 50px;
+.site-nav__item:not(:last-child) {
+    margin-right: 50px;
 }
 
-.nav-link,
-.nav-contact {
+.site-nav__link,
+.contacts__link {
     display: block;
     padding-top: 32px;
     padding-bottom: 32px;
@@ -163,16 +165,16 @@ img {
     letter-spacing: 0.02em;
 }
 
-.nav-link {
+.site-nav__link {
     color: var(--secondary-text-color);
 }
 
-.nav-link.current {
+.site-nav__link--current {
     position: relative;
     color: var(--accent-color);
 }
 
-.current::after {
+.site-nav__link--current::after {
     content: '';
     position: absolute;
     left: 0;
@@ -186,34 +188,35 @@ img {
 
 /* Контакти хедер */
 
-.contact-list {
+.contacts {
     display: flex;
     margin-left: auto;
+    list-style: none;
 }
 
-.contact-item + .contact-item {
-    margin-left: 50px;
+.contacts__item:not(:last-child) {
+    margin-right: 50px;
 }
 
-.nav-contact {
+.contacts__link {
     display: flex;
     align-items: center;
     color: var(--primary-text-color);
     gap: 10px;
 }
 
-.contact-box {
+.contacts__box {
     display: flex;
     align-items: center;
 }
 
-.contact-icon {
+.contacts__icon {
     fill: currentColor;
 }
 
 /* Секція "герой" */
 
-.hero-section {
+.hero {
     max-width: 1600px;
     height: 600px;
     margin-left: auto;
@@ -234,7 +237,7 @@ img {
     background-size: cover;
 }
 
-.hero-title {
+.hero__heading {
     max-width: 696px;
     margin-top: 0;
     margin-right: auto;
@@ -250,7 +253,7 @@ img {
     text-transform: uppercase;
 }
 
-.hero-button {
+.hero__button {
     padding-top: 10px;
     padding-right: 32px;
     padding-bottom: 10px;
@@ -272,21 +275,21 @@ img {
     box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.hero-button:hover,
-.hero-button:focus {
+.hero__button:hover,
+.hero__button:focus {
     background-color: var(--btn-bg-color-hover);
     box-shadow: var(--hero-btn-shadow);
 }
 
 /* Секція "Наші переваги" */
 
-.benefits-section {
+.benefits {
     padding-bottom: 0;
 }
 
 /* Заголовок невидимка */
 
-.visually-hidden {
+.benefits__heading--visually-hidden {
     position: absolute;
     white-space: nowrap;
     width: 1px;
@@ -299,19 +302,20 @@ img {
     margin: -1px;
 }
 
-.benefits-list {
+.benefits__list {
     display: flex;
+    list-style: none;
 }
 
-.benefits-item {
+.benefits__item {
     width: 270px;
 }
 
-.benefits-item + .benefits-item {
-    margin-left: 30px;
+.benefits__item:not(:last-child) {
+    margin-right: 30px;
 }
 
-.benefits-picture {
+.benefits__wrapper {
     display: flex;
     width: 100%;
     height: 120px;
@@ -322,7 +326,7 @@ img {
     border-radius: 4px;
 }
 
-.benefits-item-title {
+.benefits__title {
     margin-bottom: 10px;
 
     font-weight: 700; 
@@ -333,15 +337,15 @@ img {
     text-transform: uppercase;
 }
 
-.benefits-item-text {
+.benefits__text {
     line-height: 1.71;
 }
 
 /* Секція "Чим займаємось", Секція "Наша команда" */
 
-.works-title,
-.team-title,
-.clients-title {
+.works__heading,
+.team__heading,
+.clients__heading {
     margin-bottom: 50px;
     text-align: center;
 
@@ -352,19 +356,20 @@ img {
     color: var(--secondary-text-color);
 }
 
-.works-list {
+.works__list {
     display: flex;
+    list-style: none;
 }
 
-.works-item + .works-item {
-    margin-left: 30px;
+.works__item:not(:last-child) {
+    margin-right: 30px;
 }
 
-.works-item {
+.works__item {
     position: relative;
 }
 
-.works-description {
+.works__wrap {
     position: absolute;
     left: 0;
     bottom: 0;
@@ -374,7 +379,7 @@ img {
     background-color: var(--works-bg-color);
 }
 
-.works-description-text {
+.works__description {
     font-weight: 700;
     line-height: 1.14;
     text-align: center;
@@ -382,32 +387,35 @@ img {
     color: var(--primary-white-color);
 }
 
-.team-section {
+/* Team section */
+
+.team {
     background-color: var(--section-bg-color);
 }
 
-.team-list {
+.team__list {
     display: flex;
+    list-style: none;
 }
 
-.team-item + .team-item {
-    margin-left: 30px;
+.team__item:not(:last-child) {
+    margin-right: 30px;
 }
 
-.team-item {
+.team__item {
     width: 270px;
     background-color: var(--primary-white-color);
     box-shadow: var(--team-list-item-shadow);
     border-radius: 0px 0px 4px 4px;
 }
 
-.team-item-content {
+.team__content {
     padding-top: 30px;
     padding-bottom: 30px;
     text-align: center;
 }
 
-.team-item-title {
+.team__title {
     margin-bottom: 10px;
 
     font-weight: 500;
@@ -416,25 +424,26 @@ img {
     color: var(--secondary-text-color);
 }
 
-.team-item-text {
+.team__text {
     margin-bottom: 16px;
 
     font-size: 16px;
     line-height: 1.18;
 }
 
-.team-social-list {
+.social-list {
     display: flex;
     justify-content: center;
     gap: 10px;
+    list-style: none;
 }
 
-.team-social-item {
+.social-list__item {
     width: 44px;
     height: 44px;
 }
 
-.team-social-link {
+.social-list__link {
     display: flex;
     width: 100%;
     height: 100%;
@@ -448,31 +457,33 @@ img {
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.team-social-icon {
+.social-list__icon {
     fill: currentColor;
 }
 
-.team-social-link:hover,
-.team-social-link:focus {
+.social-list__link:hover,
+.social-list__link:focus {
     color: var(--primary-white-color);
     background-color: var(--accent-color);
 }
 
 /* Секція Клієнти */
 
-.clients-list {
+.clients__list {
     display: flex;
-    gap: 30px;
-    
+    list-style: none;
 }
 
-.clients-item {
+.clients__item {
     width: 170px;
     height: 92px;
-    
 }
 
-.clients-link {
+.clients__item:not(:last-child) {
+    margin-right: 30px;
+}
+
+.clients__link {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -484,12 +495,12 @@ img {
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.clients-icon {
+.clients__icon {
     fill: currentColor;
 }
 
-.clients-link:hover,
-.clients-link:focus {
+.clients__link:hover,
+.clients__link:focus {
     color: var(--accent-color);
     border-color: var(--accent-color);
 }
@@ -497,60 +508,56 @@ img {
 
 /* Підвал сторінки */
 
-.page-footer {
+.footer {
     padding-top: 60px;
     padding-bottom: 60px;
     background-color: var(--secondary-bg-color);
 }
 
-.footer-box {
+.footer__container {
     display: flex;
     align-items: baseline;
     gap: 70px;
 }
 
-.logo-footer {
-    display: block;
+.footer__logo {
     margin-bottom: 20px;
-
-    font-family: 'Raleway', sans-serif;
-    font-weight: 700;
-    font-size: 26px;
-    line-height: 1.19;
-    
-    color: var(--accent-color);
 }
 
-.logo-half-footer {
+.footer__half-logo {
     color: var(--primary-white-color);
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.logo-footer:hover .logo-half-footer,
-.logo-footer:focus .logo-half-footer {
+.logo:hover .footer__half-logo,
+.logo:focus .footer__half-logo {
     color: var(--accent-color);
 }
 
-.address-item + .address-item {
-    margin-top: 9px;
+
+.address {
+    list-style: none;
 }
 
-.address-location {
+.address__item:not(:last-child) {
+    margin-bottom: 9px;
+}
+
+.address__location {
     font-style: normal;
     line-height: 1.71;
     color: var(--primary-white-color);
     text-decoration: none;
 }
 
-.address-contact {
+.address__link {
     line-height: 1.71;
     color: var(--footer-text-color);
 }
 
 
 
-.invitation-text {
-    display: block;
+.invitation__label {
     margin-bottom: 20px;
 
     font-weight: 700;
@@ -560,17 +567,18 @@ img {
     color: var(--primary-white-color);
 }
 
-.invitation-list {
+.invitation__list {
     display: flex;
     gap: 10px;
+    list-style: none;
 }
 
-.invitation-item {
+.invitation__item {
     width: 44px;
     height: 44px;
 }
 
-.invitation-link {
+.invitation__link {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -584,12 +592,12 @@ img {
 }
 
 
-.social-icon {
+.invitation__icon {
     fill: currentColor;
 }
 
-.invitation-link:hover,
-.invitation-link:focus {
+.invitation__link:hover,
+.invitation__link:focus {
   background-color: var(--accent-color);
 }
 
@@ -602,20 +610,20 @@ img {
 
 }
 
-.subscribe-form-field {
+.subscribe-form__wrapper {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
-.subscribe-label {
+.subscribe-form__label {
     font-weight: 700;
     line-height: 1.14;
     text-transform: uppercase;
     color: var(--primary-white-color);
 }
 
-.subscribe-input {
+.subscribe-form__input {
     width: 358px;
     height: 50px;
     padding: 15px 16px;
@@ -635,12 +643,12 @@ img {
     box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.subscribe-input:focus {
+.subscribe-form__input:focus {
     border-color: var(--accent-color);
     box-shadow: var(--submit-btn-shadow);
 }
 
-.subscribe-input::placeholder {
+.subscribe-form__input::placeholder {
     font-family: inherit;
     font-style: normal;
     font-weight: 400;
@@ -650,7 +658,7 @@ img {
     color: var(--footer-text-color);
 }
 
-.subscribe-button {
+.subscribe-form__button {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -677,29 +685,42 @@ img {
     transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.subscribe-button:hover,
-.subscribe-button:focus {
+.subscribe-form__button:hover,
+.subscribe-form__button:focus {
     box-shadow: var(--submit-btn-shadow);
 }
 
-.subscribe-icon {
+.subscribe-form__icon {
     fill: currentColor;
 }
 
 /* Сторінка портфоліо */
 
+.portfolio__heading--visually-hidden {
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    border: 0;
+    padding: 0;
+    clip: rect(0, 0, 0, 0);
+    clip-path: inset(50%);
+    margin: -1px;
+}
 
-.projects-filter {
+.filter {
     display: flex;
     justify-content: center;
     margin-bottom: 50px;
+    list-style: none;
 }
 
-.filter-item + .filter-item {
-    margin-left: 8px;
+.filter__item:not(:last-child) {
+    margin-right: 8px;
 }
 
-.filter-button {
+.filter__button {
     padding-top: 6px;
     padding-right: 22px;
     padding-bottom: 6px;
@@ -722,31 +743,35 @@ img {
         box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.filter-button:hover,
-.filter-button:focus {
+.filter__button:hover,
+.filter__button:focus {
     color: var(--primary-white-color);
     background-color: var(--accent-color);
     box-shadow: var(--filter-btn-shadow);
 }
 
-.projects-list {
+
+
+.portfolio__list {
     display: flex;
     flex-wrap: wrap;
     gap: 30px;
+
+    list-style: none;
 }
 
-.projects-item {
+.portfolio__item {
     width: 370px;
 
     background-color: var(--primary-white-color);
 }
 
-.projects-item-thumb {
+.project__thumb {
     position: relative;
     overflow: hidden;
 }
 
-.projects-item-overlay {
+.project__overlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -761,7 +786,7 @@ img {
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.projects-item-overlay-text {
+.project__text {
     font-size: 18px;
     line-height: 1.56;
        
@@ -769,22 +794,22 @@ img {
 }
 
 
-.projects-item-link {
+.project {
     display: block;
     text-decoration: none;
     transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.projects-item-link:hover,
-.projects-item-link:focus {
+.project:hover,
+.project:focus {
     box-shadow: var(--projects-card-shadow);
 }
 
-.projects-item-link:hover .projects-item-overlay {
+.project:hover .project__overlay {
     transform: translateY(0);
 }
 
-.projects-item-content {
+.project__meta {
     padding-top: 20px;
     padding-right: 24px;
     padding-bottom: 20px;
@@ -796,7 +821,7 @@ img {
     
 }
 
-.projects-item-title {
+.project__title {
     margin-bottom: 4px;
 
     font-weight: 700;
@@ -806,7 +831,7 @@ img {
     color: var(--secondary-text-color);
 }
 
-.projects-item-text {
+.project__description {
     font-size: 16px;
     line-height: 1.88;
     color: var(--primary-text-color);
@@ -853,7 +878,7 @@ img {
     transform: translate(-50%, -50%) scale(1.2);
 }
 
-.modal-button-close {
+.modal__button {
     position: absolute;
     width: 30px;
     height: 30px;
@@ -873,18 +898,18 @@ img {
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.modal-icon-close {
+.modal__icon {
     fill: currentColor;
 }
 
-.modal-button-close:hover {
+.modal__button:hover {
     color: var(--accent-color);
 }
 
 
 /* Form */
 
-.form-title {
+.form__title {
     margin-bottom: 12px;
 
     font-weight: 700;
@@ -895,11 +920,11 @@ img {
     color: var(--secondary-text-color);
 }
 
-.form-field {
+.form__field {
     margin-bottom: 10px;
 }
 
-.form-label {
+.form__label {
     display: block;
     margin-bottom: 4px;
 
@@ -909,12 +934,12 @@ img {
     
 }
 
-.input-wrapper {
+.form__wrapper {
     position: relative;
     color: var(--secondary-text-color);
 }
 
-.form-input {
+.form__input {
     width: 100%;
     padding-top: 11px;
     padding-right: 12px;
@@ -927,11 +952,11 @@ img {
     transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.form-input:focus {
+.form__input:focus {
     border-color: var(--accent-color);
 }
 
-.form-icon {
+.form__icon {
     position: absolute;
     top: 50%;
     left: 12px;
@@ -941,11 +966,11 @@ img {
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.input-wrapper:focus-within .form-icon {
+.form__wrapper:focus-within .form__icon {
     color: var(--accent-color);
 }
 
-.form-textarea {
+.form__textarea {
     width: 100%;
     height: 120px;
     margin-bottom: 20px;
@@ -958,7 +983,7 @@ img {
     transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.form-textarea::placeholder {
+.form__textarea::placeholder {
     font-family: inherit;
     font-style: normal;
     font-weight: 400;
@@ -969,33 +994,34 @@ img {
     color: var(--placeholder-color);
 }
 
-.form-field:focus-within .form-textarea{
+.form__field:focus-within .form__textarea{
     border-color: var(--accent-color);
 }
 
 
-.checkbox-field {
+.form__checkbox-wrapper {
     position: relative;
     margin-bottom: 30px;
 }
 
-.label-checkbox {
-    padding-left: 35px;
-
-    line-height: 1.71;
-}
-
-.terms-link {
-    line-height: 1.71;
-    
-    color: #2196F3;
-}
-
-.input-check {
+.form__checkbox {
     appearance: none;
 }
 
-.label-checkbox::before {
+.form__checkbox--visually-hidden {
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    border: 0;
+    padding: 0;
+    clip: rect(0, 0, 0, 0);
+    clip-path: inset(50%);
+    margin: -1px;
+}
+
+.form__label-flag::before {
     content: '';
     width: 16px;
     height: 15px;
@@ -1008,11 +1034,24 @@ img {
     transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.input-check:checked ~ .label-checkbox::before {
+.form__checkbox:checked ~ .form__label-flag::before {
     opacity: 0;
 }
 
-.icon-checked {
+.form__label-flag {
+    padding-left: 35px;
+
+    line-height: 1.71;
+}
+
+.form__terms-link {
+    line-height: 1.71;
+    
+    color: #2196F3;
+}
+
+
+.form__icon-check {
     position: absolute;
     top: 50%;
     left: 12px;
@@ -1024,11 +1063,11 @@ img {
 }
 
 
-.input-check:checked ~ .icon-checked {
+.form__checkbox:checked ~ .form__icon-check {
     background-color: var(--accent-color);
 }
 
-.form-btn-submit {
+.form__button {
     display: block;
     width: 200px;
     height: 50px;
@@ -1055,8 +1094,8 @@ img {
         box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.form-btn-submit:hover,
-.form-btn-submit:focus {
+.form__button:hover,
+.form__button:focus {
     background-color: var(--btn-bg-color-hover);
     box-shadow: var(--submit-btn-shadow);
 }
