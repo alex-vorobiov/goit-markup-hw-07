@@ -44,10 +44,11 @@
     @extend %button-style;
     
     @include transition(background-color, box-shadow);
+
+    &:hover,
+    &:focus {
+        background-color: $color-btn-bg-hover;
+        box-shadow: $shadow-btn-hero;
+    }
 }
 
-.hero__button:hover,
-.hero__button:focus {
-    background-color: $color-btn-bg-hover;
-    box-shadow: $shadow-btn-hero;
-}

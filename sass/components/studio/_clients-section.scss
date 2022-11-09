@@ -34,14 +34,15 @@
     border-radius: 4px;
     
     @include transition(color, border-color);
+
+    &:hover,
+    &:focus {
+        color: $color-accent;
+        border-color: $color-accent;
+    }
 }
 
 .clients__icon {
     fill: currentColor;
 }
 
-.clients__link:hover,
-.clients__link:focus {
-    color: $color-accent;
-    border-color: $color-accent;
-}

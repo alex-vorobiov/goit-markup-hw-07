@@ -40,11 +40,13 @@
     outline: none;
     
     @include transition(border-color);
+
+    &:focus {
+        border-color: $color-accent;
+    }
 }
 
-.form__input:focus {
-    border-color: $color-accent;
-}
+
 
 .form__icon {
     position: absolute;
@@ -55,11 +57,12 @@
     fill: currentColor;
     
     @include transition(color);
+
+    .form__wrapper:focus-within & {
+        color: $color-accent;
+    }
 }
 
-.form__wrapper:focus-within .form__icon {
-    color: $color-accent;
-}
 
 .form__textarea {
     width: 100%;
@@ -72,6 +75,10 @@
     outline: none;
     resize: none;
     @include transition(border-color);
+
+    .form__field:focus-within & {
+        border-color: $color-accent;
+    }
 }
 
 .form__textarea::placeholder {
@@ -85,9 +92,7 @@
     color: $color-text-modal-placeholder;
 }
 
-.form__field:focus-within .form__textarea {
-    border-color: $color-accent;
-}
+
 
 
 .form__checkbox-wrapper {
@@ -115,11 +120,13 @@
     border-radius: 2px;
     
     @include transition(opacity);
+
+    .form__checkbox:checked ~ & {
+        opacity: 0;
+    }
 }
 
-.form__checkbox:checked~.form__label-flag::before {
-    opacity: 0;
-}
+
 
 .form__label-flag {
     padding-left: 35px;
@@ -144,12 +151,13 @@
     border-radius: 2px;
 
     @include transition(background-color);
+
+    .form__checkbox:checked ~ & {
+        background-color: $color-accent;
+    }
 }
 
 
-.form__checkbox:checked~.form__icon-check {
-    background-color: $color-accent;
-}
 
 .form__button {
     display: block;
@@ -165,10 +173,11 @@
     @extend %button-style;
 
     @include transition(background-color, box-shadow);
+
+    &:hover,
+    &:focus {
+        background-color: $color-btn-bg-hover;
+        box-shadow: $shadow-btn-form;
+    }
 }
 
-.form__button:hover,
-.form__button:focus {
-    background-color: $color-btn-bg-hover;
-    box-shadow: $shadow-btn-form;
-}

@@ -17,12 +17,14 @@
 .footer__half-logo {
     color: $color-logo-white;
     @include transition(color);
+
+    .logo:hover &,
+    .logo:focus & {
+        color: $color-accent;
+    }
 }
 
-.logo:hover .footer__half-logo,
-.logo:focus .footer__half-logo {
-    color: $color-accent;
-}
+
 
 
 .address {

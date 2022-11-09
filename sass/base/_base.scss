@@ -38,12 +38,15 @@ img {
     text-decoration: none;
 
     @include transition(color);
+    
+    &:hover,
+    &:focus {
+        color: $color-accent;
+    }
+
 }
 
-.link:hover,
-.link:focus {
-    color: $color-accent;
-}
+
 
 .section {
     padding-top: 94px;

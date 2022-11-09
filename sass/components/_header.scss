@@ -22,12 +22,14 @@
     color: $color-logo-black;
 
     @include transition(color);
+
+    .logo:hover &,
+    .logo:focus & {
+        color: $color-accent;
+    }
 }
 
-.logo:hover .header__half-logo,
-.logo:focus .header__half-logo {
-    color: $color-accent;
-}
+
 
 .site-nav {
     display: flex;

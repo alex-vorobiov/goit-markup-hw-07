@@ -33,11 +33,11 @@
     background-color: $color-bg-white;
     box-shadow: $shadow-modal;
 
+    .backdrop.is-hidden & {
+        transform: translate(-50%, -50%) scale(1.2);
+    }
 }
 
-.backdrop.is-hidden .modal {
-    transform: translate(-50%, -50%) scale(1.2);
-}
 
 .modal__button {
     position: absolute;
@@ -57,12 +57,13 @@
     background-color: $color-bg-white;
     border-radius: 50%;
     @include transition(color);
+
+    &:hover {
+        color: $color-accent;
+    }
 }
 
 .modal__icon {
     fill: currentColor;
 }
 
-.modal__button:hover {
-    color: $color-accent;
-}

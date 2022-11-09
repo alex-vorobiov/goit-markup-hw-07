@@ -37,12 +37,14 @@
     border-radius: 4px;
     
     @include transition(border-color, box-shadow);
+
+    &:focus {
+        border-color: $color-accent;
+        box-shadow: $shadow-btn-form;
+    }
 }
 
-.subscribe-form__input:focus {
-    border-color: $color-accent;
-    box-shadow: $shadow-btn-form;
-}
+
 
 .subscribe-form__input::placeholder {
     font-family: inherit;
@@ -69,12 +71,14 @@
     @extend %button-style;
 
     @include transition(box-shadow);
+
+    &:hover,
+    &:focus {
+        box-shadow: $shadow-btn-form;
+    }
 }
 
-.subscribe-form__button:hover,
-.subscribe-form__button:focus {
-    box-shadow: $shadow-btn-form;
-}
+
 
 .subscribe-form__icon {
     fill: currentColor;

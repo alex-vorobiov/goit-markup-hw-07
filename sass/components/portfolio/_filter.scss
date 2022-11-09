@@ -26,11 +26,12 @@
     background-color: $color-btn-bg-light-gray;
     @extend %button-style;
     @include transition(color, background-color, box-shadow);
+
+    &:hover,
+    &:focus {
+        color: $color-text-white;
+        background-color: $color-accent;
+        box-shadow: $shadow-btn-filter;
+    }
 }
 
-.filter__button:hover,
-.filter__button:focus {
-    color: $color-text-white;
-    background-color: $color-accent;
-    box-shadow: $shadow-btn-filter;
-}

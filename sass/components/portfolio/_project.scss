@@ -3,12 +3,14 @@
     text-decoration: none;
     
     @include transition(box-shadow);
+
+    &:hover,
+    &:focus {
+        box-shadow: $shadow-project;
+    }
 }
 
-.project:hover,
-.project:focus {
-    box-shadow: $shadow-project;
-}
+
 
 .project__thumb {
     position: relative;
@@ -29,11 +31,13 @@
     transform: translateY(100%);
     
     @include transition(transform);
+
+    .project:hover & {
+        transform: translateY(0);
+    }
 }
 
-.project:hover .project__overlay {
-    transform: translateY(0);
-}
+
 
 .project__text {
     font-size: 18px;
