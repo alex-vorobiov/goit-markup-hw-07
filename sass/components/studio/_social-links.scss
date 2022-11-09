@@ -22,14 +22,15 @@
     border-radius: 50%;
 
     @include transition(color, background-color);
+
+    &:hover,
+    &:focus {
+        color: $color-text-white;
+        background-color: $color-accent;
+    }
 }
 
 .social-list__icon {
     fill: currentColor;
 }
 
-.social-list__link:hover,
-.social-list__link:focus {
-    color: $color-text-white;
-    background-color: $color-accent;
-}
