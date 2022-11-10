@@ -3,11 +3,13 @@
     justify-content: center;
     margin-bottom: 50px;
     list-style: none;
+
+    &__item:not(:last-child) {
+        margin-right: 8px;
+    }
 }
 
-.filter__item:not(:last-child) {
-    margin-right: 8px;
-}
+
 
 .filter__button {
     padding-top: 6px;
@@ -24,6 +26,7 @@
 
     color: $color-btn-text-dark-gray;
     background-color: $color-btn-bg-light-gray;
+    
     @extend %button-style;
     @include transition(color, background-color, box-shadow);
 

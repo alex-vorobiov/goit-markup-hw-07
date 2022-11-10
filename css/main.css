@@ -1197,6 +1197,10 @@ img {
           box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
+.modal__icon {
+  fill: currentColor;
+}
+
 .backdrop.is-hidden .modal {
   -webkit-transform: translate(-50%, -50%) scale(1.2);
           transform: translate(-50%, -50%) scale(1.2);
@@ -1232,10 +1236,6 @@ img {
 
 .modal__button:hover {
   color: #2196F3;
-}
-
-.modal__icon {
-  fill: currentColor;
 }
 
 .project {
@@ -1465,6 +1465,10 @@ img {
   height: 44px;
 }
 
+.social-list__icon {
+  fill: currentColor;
+}
+
 .social-list__link {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1490,9 +1494,5 @@ img {
 .social-list__link:hover, .social-list__link:focus {
   color: #ffffff;
   background-color: #2196F3;
-}
-
-.social-list__icon {
-  fill: currentColor;
 }
 /*# sourceMappingURL=main.css.map */
