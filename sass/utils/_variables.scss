@@ -1,49 +1,3 @@
-@font-face {
-    font-family: 'Raleway';
-    font-style: normal;
-    font-weight: 700;
-    src: local(''),
-        url('../../fonts/raleway-v28-latin-700.woff2') format('woff2'),
-        url('../../fonts/raleway-v28-latin-700.woff') format('woff');
-}
-
-@font-face {
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 400;
-    src: local(''),
-        url('../../fonts/roboto-v30-latin_cyrillic-regular.woff2') format('woff2'),
-        url('../../fonts/roboto-v30-latin_cyrillic-regular.woff') format('woff');
-}
-
-@font-face {
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 500;
-    src: local(''),
-        url('../../fonts/roboto-v30-latin_cyrillic-500.woff2') format('woff2'),
-        url('../../fonts/roboto-v30-latin_cyrillic-500.woff') format('woff');
-}
-
-@font-face {
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 700;
-    src: local(''),
-        url('../../fonts/roboto-v30-latin_cyrillic-700.woff2') format('woff2'),
-        url('../../fonts/roboto-v30-latin_cyrillic-700.woff') format('woff');
-}
-
-@font-face {
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 900;
-    src: local(''),
-        url('../../fonts/roboto-v30-latin_cyrillic-900.woff2') format('woff2'),
-        url('../../fonts/roboto-v30-latin_cyrillic-900.woff') format('woff');
-}
-
-
 $color-accent: #2196F3;
 $color-text-white: #ffffff;
 $color-text-primary: #757575;
@@ -87,3 +41,5 @@ $shadow-project: 0px 1px 1px rgba(0, 0, 0, 0.12),
 0px 4px 4px rgba(0, 0, 0, 0.06),
 1px 4px 6px rgba(0, 0, 0, 0.16);
 $cubic-bezier: cubic-bezier(0.4, 0, 0.2, 1);
+$font-text: 'Roboto', sans-serif;
+$font-logo: 'Raleway', sans-serif;

@@ -1,12 +1,5 @@
-@import './base/normalize';
-@import './utils/variables';
-@import './utils/mixin';
-@import './utils/placeholders';
-@import './base/base';
-@import './base/container';
-@import './components/logo';
-@import './components/header';
-@import './components/studio/index';
-@import './components/modal/index';
-@import './components/footer/index';
-@import './components/portfolio/index';
+@import './vendors/normalize';
+@import './utils/main';
+@import './base/main';
+@import './layout/main';
+@import './components/main';
